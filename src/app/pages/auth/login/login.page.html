@@ -1,21 +1,28 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="light">
     <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-item>
-    <ion-input [(ngModel)]="username" placeholder="Usuario"></ion-input>
-  </ion-item>
+<ion-content fullscreen>
+  <div class="content-wrapper">
+    <div class="login-card">
+      <h4 class="card-title">Ingrese sus credenciales</h4>
 
-  <ion-item>
-    <ion-input [(ngModel)]="password" type="password" placeholder="Contraseña"></ion-input>
-  </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="username" placeholder="Usuario"></ion-input>
+      </ion-item>
 
-  <ion-button expand="full" (click)="login()">Ingresar</ion-button>
+      <ion-item>
+        <ion-input [(ngModel)]="password" type="password" placeholder="Contraseña"></ion-input>
+      </ion-item>
 
-  <p *ngIf="error" class="error">{{ error }}</p>
+      <div class="buttons">
+        <ion-button expand="block" (click)="login()">Ingresar</ion-button>
+        <ion-button fill="outline" routerLink="/signup">Crear cuenta</ion-button>
+      </div>
 
-  <ion-button fill="clear" routerLink="/signup">Crear cuenta</ion-button>
+      <p *ngIf="error" class="error">{{ error }}</p>
+    </div>
+  </div>
 </ion-content>

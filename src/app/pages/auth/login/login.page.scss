@@ -1,18 +1,65 @@
 ion-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
+  --background: #f8f9fa; // gris clarito
+}
 
-  form {
-    width: 100%;
-    max-width: 400px;
-    margin: auto;
-  }
-  .error {
-  color: red;
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; // muy importante para centrar verticalmente
 }
-.success {
-  color: green;
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
+
+.card-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #198754; // verde principal
+  margin-bottom: 1.5rem;
+}
+
+ion-item {
+  --background: transparent;
+  --border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+ion-button {
+  flex: 1;
+  --border-radius: 8px;
+  font-weight: 600;
+}
+
+ion-button[expand="block"] {
+  --background: #198754;
+  --background-activated: #157347;
+  --color: #fff;
+}
+
+ion-button[fill="outline"] {
+  --border-color: #198754;
+  --color: #198754;
+}
+
+.error {
+  color: #dc3545; // rojo Bootstrap
+  text-align: center;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
 }
