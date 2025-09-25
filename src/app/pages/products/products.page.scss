@@ -25,7 +25,22 @@
 /* Títulos */
 ion-card-title {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  min-height: 2.6rem;
+
+  /* ✅ Compatibilidad cross-browser */
+  display: -webkit-box;
+  display: box; /* estándar */
+
+  -webkit-line-clamp: 2;
+  line-clamp: 2; /* estándar */
+
+  -webkit-box-orient: vertical;
+  box-orient: vertical; /* estándar */
+
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 ion-card-subtitle {

@@ -5,10 +5,17 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <h2>Bienvenido, {{ user?.name }}</h2>
-  <p>Email: {{ user?.email }}</p>
+  <div class="profile-container ion-text-center">
+    <ion-avatar class="ion-margin-bottom">
+      <!-- ✅ Si el usuario tiene avatar se muestra, si no, carga uno por defecto -->
+      <img [src]="user?.avatar || 'https://www.w3schools.com/howto/img_avatar.png'" alt="avatar" />
+    </ion-avatar>
 
-  <ion-button expand="block" color="danger" (click)="logout()">
-    Cerrar sesión
-  </ion-button>
+    <h2>{{ user?.username }}</h2>
+    <p>{{ user?.email }}</p>
+
+    <ion-button expand="block" color="danger" (click)="logout()">
+      Cerrar sesión
+    </ion-button>
+  </div>
 </ion-content>

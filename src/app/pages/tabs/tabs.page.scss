@@ -1,0 +1,11 @@
+ion-tab-bar {
+  --background: #ffffff; /* Fondo blanco (puedes cambiarlo) */
+  --color: #006400;      /* Verde oscuro para íconos y texto */
+  --color-selected: #004d00; /* Verde aún más oscuro al seleccionar */
+}
+
+ion-tab-button {
+  ion-icon {
+    font-size: 22px; /* Ajusta el tamaño de los íconos */
+  }
+}
