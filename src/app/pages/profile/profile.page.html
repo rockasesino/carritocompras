@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mi Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Bienvenido, {{ user?.name }}</h2>
+  <p>Email: {{ user?.email }}</p>
+
+  <ion-button expand="block" color="danger" (click)="logout()">
+    Cerrar sesión
+  </ion-button>
+</ion-content>
