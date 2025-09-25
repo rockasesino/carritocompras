@@ -28,8 +28,21 @@ export class ProductsPage {
     // agrega más productos según necesites
   ];
 
+    constructor(private router: Router) {}
+
   addToCart(product: Product) {
     console.log('Agregar al carrito:', product);
-    // Aquí luego puedes integrar con tu servicio de carrito
+    // luego puedes integrar con el servicio de carrito
+  }
+
+  viewDetails(product: Product) {
+     console.log('Navegando a product-detail con ID:', product.id);
+    this.router.navigate(['/product-detail', product.id]).then(success => {
+      console.log('Navigation success?', success);
+  });
+  }
+
+  goToCart() {
+    this.router.navigate(['/cart']); // Si tienes página de carrito
   }
 }

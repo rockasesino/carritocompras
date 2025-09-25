@@ -1,0 +1,46 @@
+.product-detail-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.product-image {
+  flex: 1 1 200px;
+  img {
+    width: 100%;
+    max-width: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+}
+
+.product-info {
+  flex: 2 1 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .price {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #198754;
+    margin-bottom: 1rem;
+  }
+
+  ion-item {
+    margin-bottom: 1rem;
+  }
+}
+
+ion-button[color="warning"] {
+  --background: #ff9500;
+  --color: #fff;
+  font-weight: 600;
+}

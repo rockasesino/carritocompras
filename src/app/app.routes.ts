@@ -18,6 +18,12 @@ export const routes: Routes = [
   },
 
   {
+    path: 'product-detail/:id',
+    loadComponent: () => import('./pages/product-detail/product-detail.page').then(m => m.ProductDetailPage),
+    canActivate: [AuthGuard]
+  },
+
+  {
     path: 'cart',
     loadComponent: () => import('./pages/cart/cart.page').then(m => m.CartPage),
     canActivate: [AuthGuard]
