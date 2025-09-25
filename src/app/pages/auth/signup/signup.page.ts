@@ -1,39 +1,46 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
   styleUrls: ['./signup.page.scss'],
   standalone: true,
-  imports: [CommonModule, IonicModule, FormsModule]   // 👈 Importar FormsModule aquí
+  imports: [CommonModule, FormsModule, IonicModule, RouterLink,RouterOutlet]
 })
 export class SignupPage {
   username: string = '';
+  email: string = '';
   password: string = '';
-  message: string = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  successMessage: string = '';
+  errorMessage: string = '';
+
+  constructor(private router: Router) {}
 
   signup() {
-    if (this.username.trim() === '' || this.password.trim() === '') {
-      this.message = 'Debes llenar todos los campos';
+    if (!this.username || !this.email || !this.password) {
+      this.errorMessage = 'Todos los campos son obligatorios.';
+      this.successMessage = '';
       return;
     }
 
-    const success = this.authService.signup(this.username, this.password);
+    // Aquí conectas con tu backend o lógica de registro
+    console.log('Registro:', {
+      username: this.username,
+      email: this.email,
+      password: this.password
+    });
 
-    if (success) {
-      this.message = 'Usuario registrado con éxito 🎉';
-      setTimeout(() => {
-        this.router.navigate(['/login']);  // Redirige al login después de registrarse
-      }, 1500);
-    } else {
-      this.message = 'El usuario ya existe ❌';
-    }
+    this.successMessage = 'Usuario registrado con éxito';
+    this.errorMessage = '';
+
+    // Redirigir automáticamente al login después de 2 segundos
+    setTimeout(() => {
+      this.router.navigate(['/login']);
+    }, 2000);
   }
 }

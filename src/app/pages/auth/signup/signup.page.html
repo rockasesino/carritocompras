@@ -1,32 +1,41 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="light">
     <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content fullscreen>
+  <div class="content-wrapper">
+    <div class="signup-card">
+      <h4 class="card-title">Crear cuenta</h4>
 
-  <!-- Usuario -->
-  <ion-item>
-    <ion-label position="floating">Usuario</ion-label>
-    <ion-input [(ngModel)]="username"></ion-input>
-  </ion-item>
+      <!-- Nombre de usuario -->
+      <ion-item>
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input [(ngModel)]="username"></ion-input>
+      </ion-item>
 
-  <!-- Contraseña -->
-  <ion-item>
-    <ion-label position="floating">Contraseña</ion-label>
-    <ion-input [(ngModel)]="password" type="password"></ion-input>
-  </ion-item>
+      <!-- Correo -->
+      <ion-item>
+        <ion-label position="floating">Correo electrónico</ion-label>
+        <ion-input [(ngModel)]="email" type="email"></ion-input>
+      </ion-item>
 
-  <!-- Botón de registro -->
-  <ion-button expand="full" (click)="signup()">Registrar</ion-button>
+      <!-- Contraseña -->
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input [(ngModel)]="password" type="password"></ion-input>
+      </ion-item>
 
-  <!-- Mensajes -->
-  <p *ngIf="message" class="success">{{ message }}</p>
-  <p *ngIf="message" class="error">{{ message }}</p>
+      <!-- Botones -->
+      <div class="buttons">
+        <ion-button expand="block" (click)="signup()">Registrar</ion-button>
+        <ion-button fill="outline" routerLink="/login">Ya tengo cuenta</ion-button>
+      </div>
 
-
-  <!-- Enlace a login -->
-  <ion-button fill="clear" routerLink="/login">Ya tengo cuenta</ion-button>
-
+      <!-- Mensajes -->
+      <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
+      <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+    </div>
+  </div>
 </ion-content>
