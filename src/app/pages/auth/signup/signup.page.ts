@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { AuthService, User } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -19,7 +20,7 @@ export class SignupPage {
   successMessage: string = '';
   errorMessage: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   signup() {
     if (!this.username || !this.email || !this.password) {
@@ -28,14 +29,15 @@ export class SignupPage {
       return;
     }
 
-    // Aquí conectas con tu backend o lógica de registro
-    console.log('Registro:', {
-      username: this.username,
-      email: this.email,
-      password: this.password
-    });
+    const result = this.authService.register({ username: this.username, email: this.email, password: this.password });
+    
+    if (!result.success) {
+      this.errorMessage = result.message;
+      this.successMessage = '';
+      return;
+    }
 
-    this.successMessage = 'Usuario registrado con éxito';
+    this.successMessage = result.message;
     this.errorMessage = '';
 
     // Redirigir automáticamente al login después de 2 segundos
