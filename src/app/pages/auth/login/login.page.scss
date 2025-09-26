@@ -63,3 +63,14 @@ ion-button[fill="outline"] {
   margin-top: 0.75rem;
   font-size: 0.9rem;
 }
+
+.google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-icon {
+  height: 20px;
+  margin-right: 8px;
+}

@@ -20,6 +20,11 @@
       <div class="buttons">
         <ion-button expand="block" (click)="login()">Ingresar</ion-button>
         <ion-button fill="outline" routerLink="/signup">Crear cuenta</ion-button>
+        <!-- Botón Google debajo de los anteriores -->
+        <ion-button color="primary" expand="block" (click)="loginGoogle()" fill="outline">
+          
+          <span>Iniciar sesión con Google</span>
+        </ion-button>
       </div>
 
       <p *ngIf="error" class="error">{{ error }}</p>

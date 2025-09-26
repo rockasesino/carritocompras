@@ -9,6 +9,8 @@ import { AppComponent } from './app/app.component';
 import { addIcons } from 'ionicons';
 import { homeOutline, pricetagOutline, cartOutline, personCircleOutline } from 'ionicons/icons';
 
+import { SocialLogin } from '@capgo/capacitor-social-login';
+
 // ✅ Registrar los iconos globalmente
 addIcons({
   homeOutline,
@@ -23,4 +25,11 @@ bootstrapApplication(AppComponent, {
     provideIonicAngular(),
     provideRouter(routes, withPreloading(PreloadAllModules)),
   ],
+});
+
+SocialLogin.initialize({
+  google: {
+    webClientId: '706216325647-h14g47sl1vsk7b1d9upm1njtqruisce7.apps.googleusercontent.com',
+    mode: 'offline'
+  }
 });
