@@ -2,15 +2,15 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { Router, RouterLink, RouterOutlet } from '@angular/router';
-import { AuthService, User } from '../../../services/auth.service';
+import { Router, RouterLink } from '@angular/router';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
   styleUrls: ['./signup.page.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule, IonicModule, RouterLink,RouterOutlet]
+  imports: [CommonModule, FormsModule, IonicModule, RouterLink]
 })
 export class SignupPage {
   username: string = '';
@@ -30,7 +30,7 @@ export class SignupPage {
     }
 
     const result = this.authService.register({ username: this.username, email: this.email, password: this.password });
-    
+
     if (!result.success) {
       this.errorMessage = result.message;
       this.successMessage = '';
@@ -40,7 +40,6 @@ export class SignupPage {
     this.successMessage = result.message;
     this.errorMessage = '';
 
-    // Redirigir automáticamente al login después de 2 segundos
     setTimeout(() => {
       this.router.navigate(['/login']);
     }, 2000);

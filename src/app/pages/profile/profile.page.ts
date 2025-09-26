@@ -1,57 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
-import { AuthService, User } from 'src/app/services/auth.service';
-
-// 👇 importar componentes de Ionic standalone
-import {
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonAvatar,
-  IonButton
-} from '@ionic/angular/standalone';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
   standalone: true,
-  imports: [
-    CommonModule,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonContent,
-    IonAvatar,
-    IonButton
-  ]
+  imports: [CommonModule, IonicModule],
 })
-export class ProfilePage implements OnInit {
-  user: User | null = null;
-
+export class ProfilePage {
   constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit() {
-    this.loadUser();
-  }
-
-  ionViewWillEnter() {
-    this.loadUser();
-  }
-
-  private loadUser() {
-    this.user = this.authService.getUser();
-  }
-
   logout() {
-    console.log('🚪 Cerrando sesión...');
-    this.authService.logout();
-
-    // ✅ Redirige al login y reemplaza el historial de navegación
-    this.router.navigate(['/login'], { replaceUrl: true }).then(() => {
-      console.log('✅ Sesión cerrada y redirigido a login');
-    });
+    this.authService.logout(); // 👈 limpia sesión
+    this.router.navigate(['/login'], { replaceUrl: true }); // 👈 regresa al login
   }
 }

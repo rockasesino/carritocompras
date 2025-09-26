@@ -1,34 +1,20 @@
 <ion-header>
-  <ion-toolbar color="light">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/products"></ion-back-button>
-    </ion-buttons>
-    <ion-title>TecnoWeb! | Detalle Producto </ion-title>
-    <ion-buttons slot="end">
-      <ion-button fill="clear" (click)="router.navigate(['/cart'])">
-        <img src="assets/icon/cart.svg" alt="Carrito" width="20" height="20">
-      </ion-button>
-    </ion-buttons>
+  <ion-toolbar>
+    <ion-title>{{ product?.name }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <div class="product-detail-grid">
-    <div class="product-image">
-      <img [src]="product.image" alt="{{ product.name }}">
-    </div>
-    <div class="product-info">
-      <h2>{{ product.name }}</h2>
-      <p class="price">{{ product.price | currency:'COP':'symbol':'1.0-0' }}</p>
+  <img [src]="product?.image" alt="{{ product?.name }}" />
 
-      <ion-item lines="none">
-        <ion-label>Cantidad</ion-label>
-        <ion-input type="number" [(ngModel)]="quantity" min="1"></ion-input>
-      </ion-item>
+  <h2>{{ product?.name }}</h2>
+  <p>{{ product?.price | currency:'COP':'symbol-narrow' }}</p>
 
-      <ion-button fill="clear" (click)="router.navigate(['/cart'])">
-        Agregar al carrito
-      </ion-button>
-    </div>
-  </div>
+  <ion-item>
+    <ion-label>Cantidad</ion-label>
+    <ion-input type="number" [(ngModel)]="quantity" min="1"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="addToCart(product)">Agregar al carrito</ion-button>
+  <ion-button expand="block" fill="clear" (click)="goToCart()">Ir al carrito</ion-button>
 </ion-content>

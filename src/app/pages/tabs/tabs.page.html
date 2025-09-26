@@ -1,25 +1,29 @@
 <ion-tabs>
-  <ion-router-outlet></ion-router-outlet>
-
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home" [routerLink]="['/tabs/home']">
+
+    <!-- Home -->
+    <ion-tab-button tab="home">
       <ion-icon name="home-outline"></ion-icon>
       <ion-label>Inicio</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="products" [routerLink]="['/tabs/products']">
+    <!-- Products -->
+    <ion-tab-button tab="products">
       <ion-icon name="pricetag-outline"></ion-icon>
       <ion-label>Productos</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="cart" [routerLink]="['/tabs/cart']">
+    <!-- Cart -->
+    <ion-tab-button tab="cart">
       <ion-icon name="cart-outline"></ion-icon>
       <ion-label>Carrito</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="profile" [routerLink]="['/tabs/profile']">
+    <!-- Profile -->
+    <ion-tab-button tab="profile">
       <ion-icon name="person-circle-outline"></ion-icon>
-      <ion-label>Cuenta</ion-label>
+      <ion-label>Perfil</ion-label>
     </ion-tab-button>
+
   </ion-tab-bar>
 </ion-tabs>

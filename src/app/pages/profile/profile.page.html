@@ -1,20 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Mi Perfil</ion-title>
+    <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <div class="profile-container ion-text-center">
-    <ion-avatar class="ion-margin-bottom">
-      <!-- ✅ Si el usuario tiene avatar se muestra, si no, carga uno por defecto -->
-      <img [src]="user?.avatar || 'https://www.w3schools.com/howto/img_avatar.png'" alt="avatar" />
+  <div class="profile-container">
+
+    <!-- Avatar -->
+    <ion-avatar>
+    <img src="assets/icon/favicon.png" alt="Avatar de usuario" />
     </ion-avatar>
 
-    <h2>{{ user?.username }}</h2>
-    <p>{{ user?.email }}</p>
+    <h2>Bienvenido 👤</h2>
+    <p>Aquí puedes ver tu información de usuario.</p>
 
     <ion-button expand="block" color="danger" (click)="logout()">
+      <ion-icon name="log-out-outline" slot="start"></ion-icon>
       Cerrar sesión
     </ion-button>
   </div>
