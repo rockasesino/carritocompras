@@ -9,11 +9,22 @@
 
     <!-- Avatar -->
     <ion-avatar>
-    <img src="assets/icon/favicon.png" alt="Avatar de usuario" />
+      <img src="assets/icon/perfil.png" alt="Avatar de usuario" />
     </ion-avatar>
 
     <h2>Bienvenido 👤</h2>
     <p>Aquí puedes ver tu información de usuario.</p>
+
+    <!-- Lista de productos en carrito -->
+    <ion-list *ngIf="cart.length > 0">
+      <ion-list-header>Mis productos en el carrito</ion-list-header>
+      <ion-item *ngFor="let item of cart">
+        <ion-label>
+          <h3>{{ item.name }}</h3>
+          <p>Cantidad: {{ item.quantity }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
 
     <ion-button expand="block" color="danger" (click)="logout()">
       <ion-icon name="log-out-outline" slot="start"></ion-icon>

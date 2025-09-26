@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
 
 interface Product {
   id: number;
@@ -26,17 +27,22 @@ export class ProductsPage {
     { id: 4, name: 'Mini Parlante Bluetooth* con forma de puerco', price: 79900, image: 'assets/products/audi4.jpg' },
   ];
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private cartService: CartService
+  ) {}
 
   addToCart(product: Product) {
-    console.log('Agregar al carrito:', product);
+    this.cartService.addProduct({ ...product, quantity: 1 });
+    console.log('Agregado al carrito:', product);
   }
 
   viewDetails(product: Product) {
     this.router.navigate(['/product-detail', product.id]);
+  
+  }
+  goToCart() {
+  this.router.navigate(['/tabs/cart']);
   }
 
-  goToCart() {
-    this.router.navigate(['/cart']);
-  }
 }

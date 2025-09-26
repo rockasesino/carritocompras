@@ -41,7 +41,8 @@ export class LoginPage implements OnInit {
   // Login con Google
   async loginGoogle() {
     try {
-      const res: { success: boolean; message: string } = await this.authService.loginWithGoogle();
+      const res: { success: boolean; message: string } =
+        await this.authService.loginWithGoogle();
       console.log(res.message);
 
       if (res.success) {

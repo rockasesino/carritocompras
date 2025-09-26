@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 export interface Product {
   id: number;
   name: string;
   price: number;
   quantity: number;
+  image: string; // 👈 agregado para que cart tenga la imagen
 }
 
 @Injectable({
@@ -12,49 +14,46 @@ export interface Product {
 })
 export class CartService {
   private cart: Product[] = [];
+  private cartItemCount = new BehaviorSubject<number>(0);
+
+  cartItemCount$ = this.cartItemCount.asObservable();
 
   constructor() {
-    this.loadFromStorage(); // 👈 Cargar carrito guardado al iniciar
+    this.loadFromStorage();
+    this.updateCount();
   }
 
-  // Agregar producto
   addProduct(product: Product) {
     const existing = this.cart.find(p => p.id === product.id);
-
     if (existing) {
-      existing.quantity += product.quantity; // Si ya existe, aumenta cantidad
+      existing.quantity += product.quantity;
     } else {
       this.cart.push(product);
     }
-
     this.saveToStorage();
+    this.updateCount();
   }
 
-  // Obtener productos del carrito
   getCart() {
     return this.cart;
   }
 
-  // Eliminar producto
   removeProduct(productId: number) {
     this.cart = this.cart.filter(p => p.id !== productId);
     this.saveToStorage();
+    this.updateCount();
   }
 
-  // Vaciar carrito
   clearCart() {
     this.cart = [];
     this.saveToStorage();
+    this.updateCount();
   }
 
-  // Obtener total del carrito
   getTotal(): number {
     return this.cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   }
 
-  // -------------------------------
-  // Métodos privados para storage
-  // -------------------------------
   private saveToStorage() {
     localStorage.setItem('cart', JSON.stringify(this.cart));
   }
@@ -64,5 +63,10 @@ export class CartService {
     if (storedCart) {
       this.cart = JSON.parse(storedCart);
     }
+  }
+
+  private updateCount() {
+    const totalItems = this.cart.reduce((sum, item) => sum + item.quantity, 0);
+    this.cartItemCount.next(totalItems);
   }
 }

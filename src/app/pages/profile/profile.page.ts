@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { CartService, Product } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-profile',
@@ -11,11 +12,21 @@ import { AuthService } from '../../services/auth.service';
   standalone: true,
   imports: [CommonModule, IonicModule],
 })
-export class ProfilePage {
-  constructor(private authService: AuthService, private router: Router) {}
+export class ProfilePage implements OnInit {
+  cart: Product[] = [];
+
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private cartService: CartService
+  ) {}
+
+  ngOnInit() {
+    this.cart = this.cartService.getCart();
+  }
 
   logout() {
-    this.authService.logout(); // 👈 limpia sesión
-    this.router.navigate(['/login'], { replaceUrl: true }); // 👈 regresa al login
+    this.authService.logout();
+    this.router.navigate(['/login'], { replaceUrl: true });
   }
 }

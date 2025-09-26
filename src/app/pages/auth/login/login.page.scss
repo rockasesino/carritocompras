@@ -1,12 +1,12 @@
 ion-content {
-  --background: #f8f9fa; // gris clarito
+  --background: #f8f9fa;
 }
 
 .content-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; // muy importante para centrar verticalmente
+  height: 100%;
 }
 
 .login-card {
@@ -23,7 +23,7 @@ ion-content {
   text-align: center;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #198754; // verde principal
+  color: #198754;
   margin-bottom: 1.5rem;
 }
 
@@ -46,31 +46,42 @@ ion-button {
   font-weight: 600;
 }
 
-ion-button[expand="block"] {
+ion-button[expand='block'] {
   --background: #198754;
   --background-activated: #157347;
   --color: #fff;
 }
 
-ion-button[fill="outline"] {
+ion-button[fill='outline'] {
   --border-color: #198754;
   --color: #198754;
 }
 
 .error {
-  color: #dc3545; // rojo Bootstrap
+  color: #dc3545;
   text-align: center;
   margin-top: 0.75rem;
   font-size: 0.9rem;
 }
 
+/* 🔹 Botón Google */
 .google-button {
+  --border-color: #dadce0;
+  --background: #fff;
+  --color: #555;
+  font-weight: 500;
+  text-transform: none;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .google-icon {
-  height: 20px;
-  margin-right: 8px;
+  height: 18px;
+  width: 18px;
+  margin-right: 8px; // 🔹 separación manual
+}
+
+.google-text {
+  font-size: 0.95rem;
 }

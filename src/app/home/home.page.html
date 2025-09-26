@@ -4,21 +4,29 @@
 
     <!-- Íconos alineados a la derecha -->
     <ion-buttons slot="end">
-      <ion-button routerLink="/cart">
+
+      <!-- Carrito con badge -->
+      <ion-button routerLink="/tabs/cart">
         <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+        <ion-badge *ngIf="cartCount > 0" color="danger">{{ cartCount }}</ion-badge>
       </ion-button>
-      <ion-button routerLink="/profile">
+
+      <!-- Perfil -->
+      <ion-button routerLink="/tabs/profile">
         <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen>
+<ion-content fullscreen class="ion-text-center">
+  <!-- Logo centrado -->
+  <div class="logo-container">
+    <img src="assets/logo.png" alt="TecnoWeb Logo" />
+  </div>
+
   <h2>👋 Bienvenido a TecnoWeb</h2>
 
-
   <!-- Contenido extra para probar scroll -->
-  <div class="scroll-test">
-  </div>
+  <div class="scroll-test"></div>
 </ion-content>

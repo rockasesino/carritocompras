@@ -17,6 +17,7 @@
     <ion-tab-button tab="cart">
       <ion-icon name="cart-outline"></ion-icon>
       <ion-label>Carrito</ion-label>
+      <ion-badge *ngIf="cartCount > 0" color="danger">{{ cartCount }}</ion-badge>
     </ion-tab-button>
 
     <!-- Profile -->

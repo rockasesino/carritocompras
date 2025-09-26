@@ -19,14 +19,12 @@ export class CartPage implements OnInit {
     this.cart = this.cartService.getCart();
   }
 
-  // eliminar producto
   removeItem(id: number) {
     this.cartService.removeProduct(id);
-    this.cart = this.cartService.getCart(); // refrescar lista
+    this.cart = this.cartService.getCart();
   }
 
-  // calcular total
   getTotal() {
-    return this.cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    return this.cartService.getTotal();
   }
 }
