@@ -1,29 +1,31 @@
 <ion-tabs>
+  <!-- Barra de pestañas que estará fija en la parte inferior -->
   <ion-tab-bar slot="bottom">
 
-    <!-- Home -->
+    <!-- 🏠 Botón de pestaña: Home -->
     <ion-tab-button tab="home">
-      <ion-icon name="home-outline"></ion-icon>
-      <ion-label>Inicio</ion-label>
+      <ion-icon name="home-outline"></ion-icon> <!-- Icono de inicio -->
+      <ion-label>Inicio</ion-label>             <!-- Texto de la pestaña -->
     </ion-tab-button>
 
-    <!-- Products -->
+    <!-- 🛍️ Botón de pestaña: Productos -->
     <ion-tab-button tab="products">
-      <ion-icon name="pricetag-outline"></ion-icon>
-      <ion-label>Productos</ion-label>
+      <ion-icon name="pricetag-outline"></ion-icon> <!-- Icono de productos -->
+      <ion-label>Productos</ion-label>              <!-- Texto de la pestaña -->
     </ion-tab-button>
 
-    <!-- Cart -->
+    <!-- 🛒 Botón de pestaña: Carrito -->
     <ion-tab-button tab="cart">
-      <ion-icon name="cart-outline"></ion-icon>
-      <ion-label>Carrito</ion-label>
+      <ion-icon name="cart-outline"></ion-icon>     <!-- Icono del carrito -->
+      <ion-label>Carrito</ion-label>                <!-- Texto de la pestaña -->
+      <!-- Badge que muestra la cantidad de productos en el carrito -->
       <ion-badge *ngIf="cartCount > 0" color="danger">{{ cartCount }}</ion-badge>
     </ion-tab-button>
 
-    <!-- Profile -->
+    <!-- 👤 Botón de pestaña: Perfil -->
     <ion-tab-button tab="profile">
-      <ion-icon name="person-circle-outline"></ion-icon>
-      <ion-label>Perfil</ion-label>
+      <ion-icon name="person-circle-outline"></ion-icon> <!-- Icono de perfil -->
+      <ion-label>Perfil</ion-label>                      <!-- Texto de la pestaña -->
     </ion-tab-button>
 
   </ion-tab-bar>

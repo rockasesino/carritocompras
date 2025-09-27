@@ -1,35 +1,59 @@
+<!-- Encabezado de la página de login -->
 <ion-header>
-  <ion-toolbar color="light">
-    <ion-title>Login</ion-title>
+  <ion-toolbar color="light"> <!-- Barra superior con color claro -->
+    <ion-title>Login</ion-title> <!-- Título de la página -->
   </ion-toolbar>
 </ion-header>
 
+<!-- Contenido principal de la página -->
 <ion-content fullscreen>
-  <div class="content-wrapper">
-    <div class="login-card">
+  <div class="content-wrapper"> <!-- Contenedor principal para centrar y dar estilo -->
+    <div class="login-card"> <!-- Tarjeta que encierra el formulario -->
+
+      <!-- Título del formulario -->
       <h4 class="card-title">Ingrese sus credenciales</h4>
 
+      <!-- Campo de entrada para el usuario -->
       <ion-item>
         <ion-input [(ngModel)]="username" placeholder="Usuario"></ion-input>
+        <!-- [(ngModel)] enlaza el valor al componente TS (two-way data binding) -->
       </ion-item>
 
+      <!-- Campo de entrada para la contraseña -->
       <ion-item>
         <ion-input [(ngModel)]="password" type="password" placeholder="Contraseña"></ion-input>
+        <!-- type="password" oculta el texto -->
       </ion-item>
 
+      <!-- Botones de acción -->
       <div class="buttons">
+        <!-- Botón para iniciar sesión -->
         <ion-button expand="block" (click)="login()">Ingresar</ion-button>
-        <ion-button fill="outline" routerLink="/signup">Crear cuenta</ion-button>
+        <!-- expand="block" hace que el botón ocupe todo el ancho -->
+        <!-- (click)="login()" llama al método login() en el componente TS -->
 
-        <!-- Botón Google -->
-        <ion-button expand="block" (click)="loginGoogle()" class="google-button" color="primary" fill="outline">         
+        <!-- Botón para ir a la vista de registro -->
+        <ion-button fill="outline" routerLink="/signup">Crear cuenta</ion-button>
+        <!-- routerLink navega a la página de registro -->
+
+        <!-- Botón de login con Google -->
+        <ion-button 
+          expand="block" 
+          (click)="loginGoogle()" 
+          class="google-button" 
+          color="primary" 
+          fill="outline">         
+          
+          <!-- Texto dentro del botón -->
           <span class="google-text">Iniciar sesión con </span>
+          <!-- Ícono de Google al lado -->
           <img src="assets/google-icon.svg" alt="Google" class="google-icon" />
         </ion-button>
-
       </div>
 
+      <!-- Mensaje de error si ocurre un fallo en el login -->
       <p *ngIf="error" class="error">{{ error }}</p>
+      <!-- *ngIf muestra el mensaje solo si "error" tiene contenido -->
     </div>
   </div>
 </ion-content>

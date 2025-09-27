@@ -1,32 +1,36 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Inicio</ion-title>
+<!-- Encabezado de la página -->
+<ion-header [translucent]="true"> <!-- Hace que el header sea semitransparente -->
+  <ion-toolbar> <!-- Barra de herramientas superior -->
+    <ion-title>Inicio</ion-title> <!-- Título que aparece en el header -->
 
     <!-- Íconos alineados a la derecha -->
-    <ion-buttons slot="end">
+    <ion-buttons slot="end"> <!-- Contenedor para los botones, alineados al final (derecha) -->
 
-      <!-- Carrito con badge -->
-      <ion-button routerLink="/tabs/tabs/cart">
-        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+      <!-- Botón del carrito con badge (contador de productos) -->
+      <ion-button routerLink="/tabs/tabs/cart"> <!-- Navega a la página del carrito -->
+        <ion-icon slot="icon-only" name="cart-outline"></ion-icon> <!-- Ícono de carrito -->
+        <!-- Muestra la cantidad de productos en el carrito solo si es mayor a 0 -->
         <ion-badge *ngIf="cartCount > 0" color="danger">{{ cartCount }}</ion-badge>
       </ion-button>
 
-      <!-- Perfil -->
-      <ion-button routerLink="/tabs/tabs/profile">
-        <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+      <!-- Botón del perfil -->
+      <ion-button routerLink="/tabs/tabs/profile"> <!-- Navega a la página de perfil -->
+        <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon> <!-- Ícono de perfil -->
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen class="ion-text-center">
-  <!-- Logo centrado -->
+<!-- Contenido principal -->
+<ion-content fullscreen class="ion-text-center"> <!-- fullscreen ocupa toda la pantalla, centrado de texto -->
+  <!-- Contenedor para el logo -->
   <div class="logo-container">
-    <img src="assets/logo.png" alt="TecnoWeb Logo" />
+    <img src="assets/logo.png" alt="TecnoWeb Logo" /> <!-- Imagen del logo -->
   </div>
 
+  <!-- Mensaje de bienvenida -->
   <h2>👋 Bienvenido a TecnoWeb</h2>
 
-  <!-- Contenido extra para probar scroll -->
+  <!-- Div vacío para probar el scroll (se puede usar como placeholder) -->
   <div class="scroll-test"></div>
 </ion-content>

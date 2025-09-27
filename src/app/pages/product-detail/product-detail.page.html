@@ -1,20 +1,33 @@
 <ion-header>
   <ion-toolbar>
+    <!-- 🔹 Título dinámico con el nombre del producto -->
     <ion-title>{{ product?.name }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
+  <!-- 📸 Imagen del producto -->
   <img [src]="product?.image" alt="{{ product?.name }}" />
 
+  <!-- 📝 Nombre del producto -->
   <h2>{{ product?.name }}</h2>
+
+  <!-- 💲 Precio del producto en formato moneda (COP) -->
   <p>{{ product?.price | currency:'COP':'symbol-narrow' }}</p>
 
+  <!-- 🔹 Input para seleccionar la cantidad -->
   <ion-item>
     <ion-label>Cantidad</ion-label>
     <ion-input type="number" [(ngModel)]="quantity" min="1"></ion-input>
   </ion-item>
 
-  <ion-button expand="block" (click)="addToCart(product)">Agregar al carrito</ion-button>
-  <ion-button expand="block" fill="clear" (click)="goToCart()">Ir al carrito</ion-button>
+  <!-- 🛒 Botón para agregar el producto al carrito -->
+  <ion-button expand="block" (click)="addToCart(product)">
+    Agregar al carrito
+  </ion-button>
+
+  <!-- 📦 Botón para ir al carrito -->
+  <ion-button expand="block" fill="clear" (click)="goToCart()">
+    Ir al carrito
+  </ion-button>
 </ion-content>

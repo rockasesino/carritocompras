@@ -1,41 +1,53 @@
+<!-- 🔹 Encabezado de la página de registro -->
 <ion-header>
-  <ion-toolbar color="light">
-    <ion-title>Registro</ion-title>
+  <ion-toolbar color="light"> <!-- Barra superior con fondo claro -->
+    <ion-title>Registro</ion-title> <!-- Título de la página -->
   </ion-toolbar>
 </ion-header>
 
+<!-- 🔹 Contenido principal -->
 <ion-content fullscreen>
-  <div class="content-wrapper">
-    <div class="signup-card">
+  <div class="content-wrapper"> <!-- Contenedor para centrar y dar estilo -->
+    <div class="signup-card"> <!-- Tarjeta que encierra el formulario -->
+
+      <!-- Título del formulario -->
       <h4 class="card-title">Crear cuenta</h4>
 
-      <!-- Nombre de usuario -->
+      <!-- 🔹 Campo de nombre de usuario -->
       <ion-item>
-        <ion-label position="floating">Usuario</ion-label>
-        <ion-input [(ngModel)]="username"></ion-input>
+        <ion-label position="floating">Usuario</ion-label> <!-- Etiqueta flotante -->
+        <ion-input [(ngModel)]="username"></ion-input> <!-- Enlaza con variable username -->
       </ion-item>
 
-      <!-- Correo -->
+      <!-- 🔹 Campo de correo -->
       <ion-item>
         <ion-label position="floating">Correo electrónico</ion-label>
-        <ion-input [(ngModel)]="email" type="email"></ion-input>
+        <ion-input [(ngModel)]="email" type="email"></ion-input> <!-- type="email" valida formato -->
       </ion-item>
 
-      <!-- Contraseña -->
+      <!-- 🔹 Campo de contraseña -->
       <ion-item>
         <ion-label position="floating">Contraseña</ion-label>
-        <ion-input [(ngModel)]="password" type="password"></ion-input>
+        <ion-input [(ngModel)]="password" type="password"></ion-input> <!-- type="password" oculta texto -->
       </ion-item>
 
-      <!-- Botones -->
+      <!-- 🔹 Botones de acción -->
       <div class="buttons">
+        <!-- Botón para registrar usuario -->
         <ion-button expand="block" (click)="signup()">Registrar</ion-button>
+        <!-- expand="block" ocupa todo el ancho -->
+        <!-- (click)="signup()" llama al método signup() en el .ts -->
+
+        <!-- Botón para ir al login si ya tiene cuenta -->
         <ion-button fill="outline" routerLink="/login">Ya tengo cuenta</ion-button>
+        <!-- fill="outline" lo hace con borde verde y fondo blanco -->
       </div>
 
-      <!-- Mensajes -->
+      <!-- 🔹 Mensajes de éxito y error -->
       <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
+      <!-- Se muestra si la variable successMessage tiene contenido -->
       <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+      <!-- Se muestra si la variable errorMessage tiene contenido -->
     </div>
   </div>
 </ion-content>

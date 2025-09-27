@@ -1,45 +1,40 @@
+/* 🎨 Contenedor principal del perfil */
 .profile-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
+  display: flex;                 /* Usamos Flexbox */
+  flex-direction: column;        /* Los elementos se apilan en columna */
+  align-items: center;           /* Centra los elementos horizontalmente */
+  justify-content: center;       /* Centra los elementos verticalmente */
+  text-align: center;            /* Centra el texto */
+  padding: 20px;                 /* Espaciado interno */
 }
 
+/* 👤 Estilo del avatar del usuario */
 ion-avatar {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 20px auto;
-  border: 3px solid var(--ion-color-primary);
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 120px;                  /* Ancho fijo */
+  height: 120px;                 /* Alto fijo */
+  margin: 0 auto 20px auto;      /* Centrado y separación inferior */
+  border: 3px solid var(--ion-color-primary); /* Borde con color primario */
+  border-radius: 50%;            /* Redondeado total (círculo) */
+  overflow: hidden;              /* Oculta lo que se salga del círculo */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra elegante */
 }
 
+/* 📝 Título de bienvenida */
 h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 10px 0 5px 0;
-  color: var(--ion-color-dark);
+  font-size: 1.5rem;             /* Tamaño de fuente */
+  font-weight: bold;             /* Negrita */
+  margin: 10px 0 5px 0;          /* Espaciado superior e inferior */
+  color: var(--ion-color-dark);  /* Color oscuro del tema */
 }
 
+/* 📄 Texto descriptivo */
 p {
-  font-size: 1rem;
-  color: var(--ion-color-medium);
-  margin-bottom: 20px;
+  font-size: 1rem;               /* Tamaño estándar */
+  color: var(--ion-color-medium);/* Color gris medio del tema */
+  margin-bottom: 20px;           /* Separación inferior */
 }
 
+/* 🔘 Botón general (como el de cerrar sesión) */
 ion-button {
-  margin-top: 15px;
-}
-
-p {
-  font-size: 1rem;
-  color: var(--ion-color-medium);
-  margin-bottom: 20px;
-}
-
-ion-button {
-  margin-top: 15px;
+  margin-top: 15px;              /* Espacio superior */
 }

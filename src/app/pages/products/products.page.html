@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
+    <!-- 🔹 Título de la página -->
     <ion-title>Productos</ion-title>
+
+    <!-- 🔹 Botón del carrito en la esquina superior derecha -->
     <ion-buttons slot="end">
       <ion-button (click)="goToCart()">
         <ion-icon name="cart-outline"></ion-icon>
@@ -12,15 +15,22 @@
 <ion-content class="ion-padding">
   <ion-grid>
     <ion-row>
+      <!-- 🔹 Recorremos el arreglo de productos -->
       <ion-col size="6" *ngFor="let product of products">
+        <!-- 🔹 Cada producto es una tarjeta -->
         <ion-card (click)="viewDetails(product)">
+          <!-- 📸 Imagen del producto -->
           <img [src]="product.image" alt="{{ product.name }}" />
+
+          <!-- 📝 Nombre y precio -->
           <ion-card-header>
             <ion-card-title>{{ product.name }}</ion-card-title>
             <ion-card-subtitle>
               {{ product.price | currency:'COP':'symbol-narrow' }}
             </ion-card-subtitle>
           </ion-card-header>
+
+          <!-- 🛒 Botón para agregar directo al carrito -->
           <ion-card-content>
             <ion-button 
               expand="block" 

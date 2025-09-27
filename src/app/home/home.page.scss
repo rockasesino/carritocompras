@@ -1,51 +1,57 @@
+/* Estilos aplicados al contenedor principal ion-content */
 ion-content {
-  --padding-top: 16px;
-  --padding-start: 16px;
-  --padding-end: 16px;
-  --padding-bottom: 16px;
-  background: #ffffff;
+  --padding-top: 16px;     /* Espaciado superior interno (padding) */
+  --padding-start: 16px;   /* Espaciado a la izquierda */
+  --padding-end: 16px;     /* Espaciado a la derecha */
+  --padding-bottom: 16px;  /* Espaciado inferior */
+  background: #ffffff;     /* Fondo blanco */
 }
 
+/* Contenedor del logo */
 .logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
+  display: flex;               /* Activa flexbox para centrar el contenido */
+  justify-content: center;     /* Centra horizontalmente la imagen */
+  align-items: center;         /* Centra verticalmente la imagen */
+  margin: 20px 0;              /* Márgenes arriba y abajo de 20px */
 
   img {
-    max-width: 200px; /* ajusta el tamaño del logo */
-    height: auto;
+    max-width: 200px; /* Tamaño máximo de la imagen (no se pasa de 200px de ancho) */
+    height: auto;     /* Mantiene la proporción de la imagen */
   }
 }
 
+/* Estilos del título de bienvenida */
 h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-  text-align: center;
+  font-size: 1.5rem;      /* Tamaño de fuente (24px aprox) */
+  font-weight: 600;       /* Peso de fuente seminegrita */
+  margin-bottom: 8px;     /* Separación inferior */
+  text-align: center;     /* Texto centrado */
 }
 
+/* Estilos para los párrafos */
 p {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 16px;
-  text-align: center;
+  font-size: 1rem;        /* Tamaño de fuente estándar (16px aprox) */
+  color: #555;            /* Color gris oscuro */
+  margin-bottom: 16px;    /* Separación inferior */
+  text-align: center;     /* Texto centrado */
 }
 
+/* Estilos generales para botones */
 ion-button {
-  margin-top: 12px;
-  margin-bottom: 20px;
+  margin-top: 12px;       /* Separación superior */
+  margin-bottom: 20px;    /* Separación inferior */
 }
 
+/* Caja de prueba de scroll */
 .scroll-test {
-  height: 1200px;
-  background: linear-gradient(white, lightblue);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  font-weight: 500;
-  color: #333;
-  border-radius: 8px;
-  margin-top: 20px;
+  height: 1200px;                                /* Altura grande para habilitar el scroll */
+  background: linear-gradient(white, lightblue); /* Fondo con degradado de blanco a azul claro */
+  display: flex;                                 /* Flexbox para centrar contenido */
+  justify-content: center;                       /* Centra horizontalmente */
+  align-items: center;                           /* Centra verticalmente */
+  font-size: 1.2rem;                             /* Tamaño de fuente mediano */
+  font-weight: 500;                              /* Peso de fuente medio */
+  color: #333;                                   /* Texto gris oscuro */
+  border-radius: 8px;                            /* Bordes redondeados */
+  margin-top: 20px;                              /* Separación superior */
 }

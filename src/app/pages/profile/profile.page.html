@@ -1,31 +1,35 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Perfil</ion-title>
+    <ion-title>Perfil</ion-title> <!-- 🔹 Título de la página -->
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
   <div class="profile-container">
 
-    <!-- Avatar -->
+    <!-- 👤 Avatar del usuario -->
     <ion-avatar>
       <img src="assets/icon/perfil.png" alt="Avatar de usuario" />
     </ion-avatar>
 
+    <!-- Mensaje de bienvenida -->
     <h2>Bienvenido 👤</h2>
     <p>Aquí puedes ver tu información de usuario.</p>
 
-    <!-- Lista de productos en carrito -->
+    <!-- 🛒 Lista de productos en el carrito (si hay elementos) -->
     <ion-list *ngIf="cart.length > 0">
       <ion-list-header>Mis productos en el carrito</ion-list-header>
+
+      <!-- Itera sobre los items del carrito -->
       <ion-item *ngFor="let item of cart">
         <ion-label>
-          <h3>{{ item.name }}</h3>
-          <p>Cantidad: {{ item.quantity }}</p>
+          <h3>{{ item.name }}</h3> <!-- Nombre del producto -->
+          <p>Cantidad: {{ item.quantity }}</p> <!-- Cantidad agregada -->
         </ion-label>
       </ion-item>
     </ion-list>
 
+    <!-- 🔴 Botón de cerrar sesión -->
     <ion-button expand="block" color="danger" (click)="logout()">
       <ion-icon name="log-out-outline" slot="start"></ion-icon>
       Cerrar sesión

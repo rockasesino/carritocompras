@@ -1,36 +1,43 @@
 <ion-header>
   <ion-toolbar>
+    <!-- 🔹 Título del header -->
     <ion-title>Mi Carrito 🛒</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
+  <!-- 🔹 Lista de productos del carrito (solo se muestra si hay items) -->
   <ion-list *ngIf="cart.length > 0; else emptyCart">
+    
+    <!-- 🔹 Itera sobre cada producto del carrito -->
     <ion-item *ngFor="let item of cart">
       
-      <!-- Imagen del producto -->
+      <!-- 📸 Miniatura de producto -->
       <ion-thumbnail slot="start">
         <img [src]="item.image" alt="{{ item.name }}" />
       </ion-thumbnail>
 
-      <!-- Info del producto -->
+      <!-- 📝 Información del producto -->
       <ion-label>
         <h2>{{ item.name }}</h2>
         <p>Cantidad: {{ item.quantity }}</p>
         <p>Precio: {{ item.price | currency:'COP':'symbol-narrow' }}</p>
+        <!-- currency: formatea el número como moneda en pesos colombianos -->
       </ion-label>
 
-      <!-- Botón eliminar -->
+      <!-- ❌ Botón para eliminar un producto -->
       <ion-button color="danger" (click)="removeItem(item.id)">
         Eliminar
       </ion-button>
     </ion-item>
   </ion-list>
 
+  <!-- 🔹 Mensaje mostrado si el carrito está vacío -->
   <ng-template #emptyCart>
     <p>Tu carrito está vacío.</p>
   </ng-template>
 
+  <!-- 🔹 Total del carrito (solo si hay items) -->
   <ion-item *ngIf="cart.length > 0">
     <ion-label>
       <strong>Total: {{ getTotal() | currency:'COP':'symbol-narrow' }}</strong>

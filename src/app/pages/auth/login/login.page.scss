@@ -1,87 +1,99 @@
+/* 🔹 Fondo del contenido principal */
 ion-content {
-  --background: #f8f9fa;
+  --background: #f8f9fa; /* Fondo gris muy claro */
 }
 
+/* 🔹 Contenedor que centra la tarjeta de login */
 .content-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  display: flex;              /* Activa flexbox */
+  justify-content: center;    /* Centra horizontalmente */
+  align-items: center;        /* Centra verticalmente */
+  height: 100%;               /* Ocupa toda la altura disponible */
 }
 
+/* 🔹 Tarjeta del formulario de login */
 .login-card {
-  width: 100%;
-  max-width: 400px;
-  margin: 1rem;
-  padding: 2rem;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  width: 100%;                          /* Ocupa todo el ancho disponible */
+  max-width: 400px;                     /* Máximo ancho de 400px (se adapta en móviles) */
+  margin: 1rem;                         /* Espaciado externo */
+  padding: 2rem;                        /* Espaciado interno */
+  background: #fff;                     /* Fondo blanco */
+  border-radius: 16px;                  /* Bordes redondeados */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* Sombra elegante */
 }
 
+/* 🔹 Título del formulario */
 .card-title {
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #198754;
-  margin-bottom: 1.5rem;
+  text-align: center;        /* Texto centrado */
+  font-size: 1.5rem;         /* Tamaño grande */
+  font-weight: bold;         /* Negrita */
+  color: #198754;            /* Verde Bootstrap */
+  margin-bottom: 1.5rem;     /* Separación inferior */
 }
 
+/* 🔹 Campos de entrada */
 ion-item {
-  --background: transparent;
-  --border-radius: 8px;
-  margin-bottom: 0.75rem;
+  --background: transparent; /* Fondo transparente */
+  --border-radius: 8px;      /* Bordes redondeados */
+  margin-bottom: 0.75rem;    /* Separación entre inputs */
 }
 
+/* 🔹 Contenedor de botones */
 .buttons {
-  display: flex;
-  gap: 0.75rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
+  display: flex;        /* Flexbox para alinear botones */
+  gap: 0.75rem;         /* Espaciado entre botones */
+  margin-top: 1rem;     /* Separación superior */
+  flex-wrap: wrap;      /* Permite que los botones se acomoden en varias líneas si no caben */
 }
 
+/* 🔹 Estilos generales para los botones */
 ion-button {
-  flex: 1;
-  --border-radius: 8px;
-  font-weight: 600;
+  flex: 1;                  /* Hace que los botones ocupen el mismo espacio */
+  --border-radius: 8px;     /* Bordes redondeados */
+  font-weight: 600;         /* Texto en seminegrita */
 }
 
+/* 🔹 Botón expandido (Ingresar) */
 ion-button[expand='block'] {
-  --background: #198754;
-  --background-activated: #157347;
-  --color: #fff;
+  --background: #198754;          /* Fondo verde */
+  --background-activated: #157347;/* Verde más oscuro al presionar */
+  --color: #fff;                  /* Texto blanco */
 }
 
+/* 🔹 Botón outline (Crear cuenta) */
 ion-button[fill='outline'] {
-  --border-color: #198754;
-  --color: #198754;
+  --border-color: #198754; /* Borde verde */
+  --color: #198754;        /* Texto verde */
 }
 
+/* 🔹 Mensaje de error */
 .error {
-  color: #dc3545;
-  text-align: center;
-  margin-top: 0.75rem;
-  font-size: 0.9rem;
+  color: #dc3545;         /* Rojo Bootstrap */
+  text-align: center;     /* Texto centrado */
+  margin-top: 0.75rem;    /* Separación superior */
+  font-size: 0.9rem;      /* Tamaño más pequeño */
 }
 
-/* 🔹 Botón Google */
+/* 🔹 Estilo especial para el botón de Google */
 .google-button {
-  --border-color: #dadce0;
-  --background: #fff;
-  --color: #555;
-  font-weight: 500;
-  text-transform: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  --border-color: #dadce0; /* Gris claro (borde) */
+  --background: #fff;      /* Fondo blanco */
+  --color: #555;           /* Texto gris */
+  font-weight: 500;        /* Seminegrita */
+  text-transform: none;    /* Mantiene el texto normal (no mayúsculas) */
+  display: flex;           /* Flexbox dentro del botón */
+  align-items: center;     /* Centrado vertical */
+  justify-content: center; /* Centrado horizontal */
 }
 
+/* 🔹 Ícono de Google dentro del botón */
 .google-icon {
-  height: 18px;
-  width: 18px;
-  margin-right: 8px; // 🔹 separación manual
+  height: 18px;        /* Alto del ícono */
+  width: 18px;         /* Ancho del ícono */
+  margin-right: 8px;   /* Separación entre ícono y texto */
 }
 
+/* 🔹 Texto dentro del botón de Google */
 .google-text {
-  font-size: 0.95rem;
+  font-size: 0.95rem; /* Tamaño ligeramente más pequeño que el título */
 }
