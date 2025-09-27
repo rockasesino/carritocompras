@@ -6,13 +6,13 @@
     <ion-buttons slot="end">
 
       <!-- Carrito con badge -->
-      <ion-button routerLink="/tabs/cart">
+      <ion-button routerLink="/tabs/tabs/cart">
         <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
         <ion-badge *ngIf="cartCount > 0" color="danger">{{ cartCount }}</ion-badge>
       </ion-button>
 
       <!-- Perfil -->
-      <ion-button routerLink="/tabs/profile">
+      <ion-button routerLink="/tabs/tabs/profile">
         <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
       </ion-button>
     </ion-buttons>

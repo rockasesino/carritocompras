@@ -21,7 +21,7 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     if (this.authService.isLoggedIn()) {
-      this.router.navigate(['/tabs/home'], { replaceUrl: true });
+      this.router.navigate(['tabs/tabs/home'], { replaceUrl: true });
     }
   }
 
@@ -35,7 +35,7 @@ export class LoginPage implements OnInit {
     }
 
     this.error = '';
-    this.router.navigate(['/tabs/home'], { replaceUrl: true });
+    this.router.navigate(['tabs/tabs/home'], { replaceUrl: true });
   }
 
   // Login con Google
@@ -46,7 +46,7 @@ export class LoginPage implements OnInit {
       console.log(res.message);
 
       if (res.success) {
-        this.router.navigate(['/tabs/home'], { replaceUrl: true });
+        this.router.navigate(['tabs/tabs/home'], { replaceUrl: true });
       } else {
         this.error = res.message;
       }

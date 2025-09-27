@@ -38,11 +38,12 @@ export class ProductsPage {
   }
 
   viewDetails(product: Product) {
-    this.router.navigate(['/product-detail', product.id]);
+    this.router.navigate(['tabs/tabs/product-detail', product.id]);
   
   }
+
   goToCart() {
-  this.router.navigate(['/tabs/cart']);
+  this.router.navigate(['tabs/tabs/cart']);
   }
 
 }
